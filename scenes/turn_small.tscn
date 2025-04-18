@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca41mfxrftkhe"]
+
+[ext_resource type="PackedScene" uid="uid://ckyfapycl4v17" path="res://assets/kenney_train_kit/Models/GLB format/railroad-corner-small.glb" id="1_jyng6"]
+[ext_resource type="Script" uid="uid://ljsuntrt14i" path="res://scripts/TurnSmall.cs" id="2_jn6lf"]
+
+[node name="railroad-corner-small2" instance=ExtResource("1_jyng6")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("2_jn6lf")
+
+[node name="railroad-corner-small" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)

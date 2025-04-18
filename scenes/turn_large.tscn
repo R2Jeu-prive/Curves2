@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bycsukicc2ih0"]
+
+[ext_resource type="PackedScene" uid="uid://xlqw1u6225gl" path="res://assets/kenney_train_kit/Models/GLB format/railroad-corner-large.glb" id="1_b4jaf"]
+
+[node name="railroad-corner-large2" instance=ExtResource("1_b4jaf")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="railroad-corner-large" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
