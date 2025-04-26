@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dthgogx6atw7t"
+path="res://.godot/imported/train-electric-subway-b.obj-9aadc503889d7f4172f861c155bdd6aa.mesh"
+
+[deps]
+
+files=["res://.godot/imported/train-electric-subway-b.obj-9aadc503889d7f4172f861c155bdd6aa.mesh"]
+
+source_file="res://assets/kenney_train_kit/Models/OBJ format/train-electric-subway-b.obj"
+dest_files=["res://.godot/imported/train-electric-subway-b.obj-9aadc503889d7f4172f861c155bdd6aa.mesh", "res://.godot/imported/train-electric-subway-b.obj-9aadc503889d7f4172f861c155bdd6aa.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

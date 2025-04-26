@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bqkor7cfruv7l"]
+
+[ext_resource type="Texture2D" uid="uid://bkypokf1s4job" path="res://assets/kenney_train_kit/Models/OBJ format/Textures/colormap.png" id="1_yatmu"]
+
+[resource]
+albedo_color = Color(1, 0.392157, 0.392157, 1)
+albedo_texture = ExtResource("1_yatmu")

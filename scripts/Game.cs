@@ -1,12 +1,15 @@
 using Godot;
+using System;
 using System.Collections.Generic;
 
 public partial class Game : Node
 {
 	public static Game Instance { get; private set; }
 
-	public List<TurnSmall> PlacedTurns;
-	public TurnSmall HeldTurn;
+	public List<TurnSmall> PlacedTurnsSmall;
+	public List<TurnBig> PlacedTurnsBig;
+	public TurnSmall HeldTurnSmall;
+	public TurnBig HeldTurnBig;
 
 	private Plane floorPlane = new Plane(0,1,0,0);
 	private Vector3I wantedGridPos;
@@ -15,20 +18,28 @@ public partial class Game : Node
 	public override void _Ready()
 	{
 		Instance = this;
-		PlacedTurns = new List<TurnSmall>();
-		HeldTurn = null;
+		PlacedTurnsSmall = new List<TurnSmall>();
+		PlacedTurnsBig = new List<TurnBig>();
+		HeldTurnSmall = null;
+		HeldTurnBig = null;
 	}
 
-	public Vector3I? GetSelectedPos(){
+	public Vector3 GetSelectedPos(bool snapToCenter){
 		Vector2 mousePos = GetViewport().GetMousePosition();
 		Camera3D cam = GetTree().Root.GetCamera3D();
-		Vector3? intersection = floorPlane.IntersectsRay(cam.Position, cam.ProjectRayNormal(mousePos));
+		Vector3? potentialIntersection = floorPlane.IntersectsRay(cam.Position, cam.ProjectRayNormal(mousePos));
 
-		if(!intersection.HasValue){return null;}
-		wantedGridPos = new Vector3I(Mathf.RoundToInt(intersection.Value.X), 0, Mathf.RoundToInt(intersection.Value.Z));
+		if(!potentialIntersection.HasValue){throw new Exception("Could not intersect ray with floor plane");}
+		Vector3 intersection = potentialIntersection.Value;
 
-		DebugDraw3D.DrawSphere(wantedGridPos, 0.2f);
-
-		return wantedGridPos;
+		if(snapToCenter){
+			intersection.X = Mathf.RoundToInt(intersection.X + 0.5f) - 0.5f;
+			intersection.Z = Mathf.RoundToInt(intersection.Z + 0.5f) - 0.5f;
+		}else{
+			intersection.X = Mathf.RoundToInt(intersection.X);
+			intersection.Z = Mathf.RoundToInt(intersection.Z);
+		}
+		DebugDraw3D.DrawSphere(intersection, 0.2f);
+		return intersection;
 	}
 }

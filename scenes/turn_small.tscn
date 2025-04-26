@@ -1,11 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca41mfxrftkhe"]
+[gd_scene load_steps=4 format=3 uid="uid://cf0301pw77njw"]
 
-[ext_resource type="PackedScene" uid="uid://ckyfapycl4v17" path="res://assets/kenney_train_kit/Models/GLB format/railroad-corner-small.glb" id="1_jyng6"]
+[ext_resource type="ArrayMesh" uid="uid://crgm0yqdq7wgo" path="res://assets/turn_small.res" id="2_bfyeq"]
 [ext_resource type="Script" uid="uid://ljsuntrt14i" path="res://scripts/TurnSmall.cs" id="2_jn6lf"]
+[ext_resource type="Material" uid="uid://b1v8x61so4n3p" path="res://assets/track.tres" id="3_2687l"]
 
-[node name="railroad-corner-small2" instance=ExtResource("1_jyng6")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+[node name="TurnSmall" type="Node3D"]
 script = ExtResource("2_jn6lf")
 
-[node name="railroad-corner-small" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 0, -0.5)
+mesh = ExtResource("2_bfyeq")
+surface_material_override/0 = ExtResource("3_2687l")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+depth = 0.5
+polygon = PackedVector2Array(-0.45, 0.25, -0.45, 0.75, 0.1, 0.6, 0.6, 0.1, 0.75, -0.45, 0.25, -0.45, 0.05, 0.05)
