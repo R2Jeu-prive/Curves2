@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://bycsukicc2ih0"]
 
+[ext_resource type="Script" uid="uid://3f1dvqhmuyc8" path="res://scripts/Turn.cs" id="1_iwdw2"]
 [ext_resource type="ArrayMesh" uid="uid://bcepq83vpqeuk" path="res://assets/turn_big.res" id="2_3blr2"]
-[ext_resource type="Script" uid="uid://b0fxotdlm1fol" path="res://scripts/TurnBig.cs" id="2_whx7b"]
 [ext_resource type="Material" uid="uid://b1v8x61so4n3p" path="res://assets/track.tres" id="3_iwdw2"]
 
 [node name="TurnBig" type="Node3D"]
-script = ExtResource("2_whx7b")
+script = ExtResource("1_iwdw2")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1, 0, -1)

@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk32mwqky5al"]
+
+[ext_resource type="Texture2D" uid="uid://dvuedxpohu4bn" path="res://icons/turn_big.png" id="1_x4jx1"]
+[ext_resource type="Script" uid="uid://cq1m70afcxdib" path="res://scripts/Ui.cs" id="1_yev5y"]
+[ext_resource type="Texture2D" uid="uid://b2upc0r7im2lq" path="res://icons/turn_small.png" id="2_yev5y"]
+
+[node name="Ui" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_yev5y")
+
+[node name="ButtonTurnBig" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 140.0
+offset_right = 120.0
+offset_bottom = 240.0
+focus_mode = 0
+action_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="ButtonTurnBig"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 90.0
+texture = ExtResource("1_x4jx1")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ButtonTurnSmall" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 120.0
+offset_bottom = 120.0
+focus_mode = 0
+action_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="ButtonTurnSmall"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 90.0
+offset_bottom = 90.0
+texture = ExtResource("2_yev5y")
+expand_mode = 1
+stretch_mode = 4

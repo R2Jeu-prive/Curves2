@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5fl6qkk384cp"]
+
+[ext_resource type="Script" uid="uid://bpy1k33uyqnt0" path="res://scripts/Tip.cs" id="1_2mt8b"]
+[ext_resource type="ArrayMesh" uid="uid://c8eswlha3npme" path="res://assets/straight.res" id="2_xfhn8"]
+[ext_resource type="Material" uid="uid://b1v8x61so4n3p" path="res://assets/track.tres" id="3_l77wy"]
+[ext_resource type="ArrayMesh" uid="uid://b3xu8dp8wf26y" path="res://assets/metal.res" id="4_xum2f"]
+[ext_resource type="ArrayMesh" uid="uid://dwmeegwk72h3b" path="res://assets/board.res" id="5_fncms"]
+
+[node name="Tip" type="Node3D"]
+script = ExtResource("1_2mt8b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, -1)
+mesh = ExtResource("2_xfhn8")
+surface_material_override/0 = ExtResource("3_l77wy")
+
+[node name="Diagonal" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.51, 0, 0, 0, 0.433013, -0.2, 0, 0.25, 0.34641, 0, 0.1, 0.8)
+mesh = ExtResource("4_xum2f")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="Vertical" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.49, 0, 0, 0, -0.0850876, -0.246202, 0, 0.482556, -0.043412, 0, 0.146, 0.605)
+mesh = ExtResource("4_xum2f")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="Board" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.4, 0, 0, 0, -1.74846e-08, 0.4, 0, -0.4, -1.74846e-08, 0, 0.25, 0.632)
+mesh = ExtResource("5_fncms")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+depth = 0.5
+polygon = PackedVector2Array(-0.25, -1, 0.25, -1, 0.25, 1, -0.25, 1)

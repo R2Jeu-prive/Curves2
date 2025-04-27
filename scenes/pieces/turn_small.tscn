@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://cf0301pw77njw"]
 
-[ext_resource type="ArrayMesh" uid="uid://crgm0yqdq7wgo" path="res://assets/turn_small.res" id="2_bfyeq"]
-[ext_resource type="Script" uid="uid://ljsuntrt14i" path="res://scripts/TurnSmall.cs" id="2_jn6lf"]
-[ext_resource type="Material" uid="uid://b1v8x61so4n3p" path="res://assets/track.tres" id="3_2687l"]
+[ext_resource type="Script" uid="uid://3f1dvqhmuyc8" path="res://scripts/Turn.cs" id="1_emjn1"]
+[ext_resource type="ArrayMesh" uid="uid://crgm0yqdq7wgo" path="res://assets/turn_small.res" id="2_yjqsu"]
+[ext_resource type="Material" uid="uid://b1v8x61so4n3p" path="res://assets/track.tres" id="3_fxpa5"]
 
 [node name="TurnSmall" type="Node3D"]
-script = ExtResource("2_jn6lf")
+script = ExtResource("1_emjn1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 0, -0.5)
-mesh = ExtResource("2_bfyeq")
-surface_material_override/0 = ExtResource("3_2687l")
+mesh = ExtResource("2_yjqsu")
+surface_material_override/0 = ExtResource("3_fxpa5")
 
 [node name="Area3D" type="Area3D" parent="."]
 

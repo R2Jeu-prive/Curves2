@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0jg3hm8qub8p"]
+
+[ext_resource type="Script" uid="uid://ctwsnuoeq3lam" path="res://scripts/Screenshot.cs" id="1_p84e3"]
+[ext_resource type="PackedScene" uid="uid://cf0301pw77njw" path="res://scenes/pieces/turn_small.tscn" id="2_35xrs"]
+[ext_resource type="PackedScene" uid="uid://bycsukicc2ih0" path="res://scenes/pieces/turn_big.tscn" id="3_35xrs"]
+
+[sub_resource type="Environment" id="Environment_p84e3"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.8
+
+[node name="Screenshot" type="SubViewport"]
+transparent_bg = true
+render_target_update_mode = 1
+script = ExtResource("1_p84e3")
+
+[node name="TurnSmall" parent="." instance=ExtResource("2_35xrs")]
+visible = false
+
+[node name="TurnBig" parent="." instance=ExtResource("3_35xrs")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.19424e-08, 0.781041, -0.62448, 1.23093e-08, 0.62448, 0.781041, 1, 2.50718e-08, -3.58063e-08, -2.451, 3, -0.257)
+environment = SubResource("Environment_p84e3")
+fov = 35.0
